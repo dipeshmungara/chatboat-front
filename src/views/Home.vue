@@ -2,6 +2,7 @@
 import AppBanner from '@/components/shared/AppBanner';
 import ProjectsGrid from '../components/projects/ProjectsGrid.vue';
 import Button from '../components/reusable/Button.vue';
+import FeatureSection from '../components/shared/FeatureSection.vue';
 
 export default {
 	name: 'Home',
@@ -9,15 +10,22 @@ export default {
 		AppBanner,
 		ProjectsGrid,
 		Button,
+		FeatureSection,
 	},
 };
 </script>
 
 <template>
+	
 	<div class="container mx-auto">
 		<!-- Banner -->
 		<AppBanner class="mb-5 sm:mb-8" />
 
+		<!-- About me -->
+		<div class="container mx-auto">
+			<FeatureSection />
+		</div>
+	
 		<!-- Projects -->
 		<ProjectsGrid />
 

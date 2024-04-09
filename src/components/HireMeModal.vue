@@ -2,10 +2,9 @@
 import feather from 'feather-icons';
 import Button from './reusable/Button.vue';
 import FormInput from './reusable/FormInput.vue';
-import FormTextarea from './reusable/FormTextarea.vue';
 export default {
 	props: ['showModal', 'modal', 'categories'],
-	components: { Button, FormInput, FormTextarea },
+	components: { Button, FormInput },
 	data() {
 		return {};
 	},
@@ -21,7 +20,7 @@ export default {
 
 <template>
 	<transition name="fade">
-		<div v-show="modal" class="font-general-regular fixed inset-0 z-30">
+		<div v-show="modal" class="font-general-regular  fixed inset-0 z-30">
 			<!-- Modal body background as backdrop -->
 			<div
 				v-show="modal"
@@ -46,7 +45,7 @@ export default {
 								<h5
 									class="text-primary-dark dark:text-primary-light text-xl"
 								>
-									What project are you looking for?
+									Login
 								</h5>
 								<button
 									class="px-4 text-primary-dark dark:text-primary-light"
@@ -67,36 +66,14 @@ export default {
 										inputIdentifier="email"
 										inputType="email"
 									/>
-
-									<div class="mt-6 mb-4">
-										<label
-											class="block mb-2 text-lg text-primary-dark dark:text-primary-light"
-											for="project"
-											>Project Type</label
-										>
-										<select
-											class="w-full px-5 py-3 border-1 border-gray-200 dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
-											id="project"
-											name="project"
-											type="text"
-											required=""
-											aria-label="Project Category"
-										>
-											<option
-												v-for="category in categories"
-												:key="category.id"
-												:value="category.value"
-											>
-												{{ category.name }}
-											</option>
-										</select>
-									</div>
-
-									<FormTextarea
-										label="Details"
-										textareaIdentifier="details"
+									<FormInput
+										label="Password"
+										inputIdentifier="password"
+										inputType="password"
 									/>
 
+
+								
 									<div class="mt-7 pb-4 sm:pb-1">
 										<Button
 											title="Send Request"

@@ -7,7 +7,7 @@ const routes = [
 		name: 'Home',
 		component: Home,
 		meta: {
-			title: 'Stoman - Home',
+			title: 'DigiTalk - Home',
 		},
 	},
 	{
@@ -19,7 +19,7 @@ const routes = [
 		component: () =>
 			import(/* webpackChunkName: "about" */ '../views/About.vue'),
 		meta: {
-			title: 'Stoman - About',
+			title: 'DigiTalk - About',
 		},
 	},
 	{
@@ -31,7 +31,7 @@ const routes = [
 		component: () =>
 			import(/* webpackChunkName: "projects" */ '../views/Projects.vue'),
 		meta: {
-			title: 'Stoman - Projects',
+			title: 'DigiTalk - Projects',
 		},
 	},
 	{
@@ -45,7 +45,7 @@ const routes = [
 				/* webpackChunkName: "projects" */ '../views/SingleProject.vue'
 			),
 		meta: {
-			title: 'Stoman - Single Project',
+			title: 'DigiTalk - Single Project',
 		},
 	},
 	{
@@ -57,7 +57,25 @@ const routes = [
 		component: () =>
 			import(/* webpackChunkName: "projects" */ '../views/Contact.vue'),
 		meta: {
-			title: 'Stoman - Contact',
+			title: 'DigiTalk - Contact',
+		},
+	},
+	{
+		path: '/login',
+		name: 'Login',
+		component: () =>
+			import(/* webpackChunkName: "projects" */ '../views/Login.vue'),
+		meta: {
+			title: 'DigiTalk - Login',
+		},
+	},
+	{
+		path: '/signup',
+		name: 'Signup',
+		component: () =>
+			import(/* webpackChunkName: "projects" */ '../views/Signup.vue'),
+		meta: {
+			title: 'DigiTalk - Signup',
 		},
 	},
 ];
@@ -74,7 +92,7 @@ export default router;
 
 /**
  * Below code will display the component/active page title
- * Powered by: Nangialai Stoman
+ * Powered by: Nangialai DigiTalk
  */
 
 // This callback runs before every route change, including on page load.

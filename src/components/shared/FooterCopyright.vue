@@ -3,8 +3,8 @@ export default {
 	data: () => {
 		return {
 			copyrightDate: new Date().getFullYear(),
-			projectName: 'Vue.js & Tailwind CSS Portfolio',
-			author: 'Stoman',
+			projectName: 'DigiTalk',
+			author: 'Sumit Makadia',
 		};
 	},
 };
@@ -22,14 +22,7 @@ export default {
 				class="font-general-medium hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 duration-500"
 			>
 				{{ projectName }}
-			</a>
-			. Developed by
-			<a
-				href="https://stoman.me"
-				target="__blank"
-				class="font-general-medium text-secondary-dark dark:text-secondary-light uppercase hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 duration-500"
-				>{{ author }}</a
-			>
+			</a> All rights reserved
 		</div>
 	</div>
 </template>

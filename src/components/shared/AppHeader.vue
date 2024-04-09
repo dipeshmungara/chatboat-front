@@ -75,10 +75,10 @@ export default {
 </script>
 
 <template>
-	<nav id="nav" class="sm:container sm:mx-auto">
+	<nav id="nav" class="sm:container sm:mx-auto relative z-10">
 		<!-- Header start -->
 		<div
-			class="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center my-6"
+			class="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center my-6 border border-gray-200 rounded-[36px] mt-3 dark:border-gray-700 px-8 py-3"
 		>
 			<!-- Header menu links and small screen hamburger menu -->
 			<div class="flex justify-between items-center px-4 sm:px-0">
@@ -145,9 +145,15 @@ export default {
 			>
 				<!-- Hire me button -->
 				<div class="hidden md:block">
+					<router-link
+			to="/login"
+			class="font-general-medium block text-left text-base font-medium text-primary-dark dark:text-ternary-light hover:text-indigo-600 dark:hover:text-indigo-300  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+			aria-label="Login"
+			>Login</router-link
+		>
 					<Button
-						title="Hire Me"
-						class="text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
+						title="Login"
+						class="hidden text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
 						@click="showModal()"
 						aria-label="Hire Me Button"
 					/>
