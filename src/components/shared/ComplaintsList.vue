@@ -1,71 +1,157 @@
-<script setup>
-  import { ref } from 'vue'; 
-    // eslint-disable-next-line no-unused-vars
-  const people = ref([
-    {
-      name: 'Sumil makadia',
-      role: 'Co-Founder / CEO',
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-	{
-      name: 'Sumil makadia',
-      role: 'Co-Founder / CEO',
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-	{
-      name: 'Sumil makadia',
-      role: 'Co-Founder / CEO',
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-	{
-      name: 'Sumil makadia',
-      role: 'Co-Founder / CEO',
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-	{
-      name: 'Sumil makadia',
-      role: 'Co-Founder / CEO',
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-	{
-      name: 'Sumil makadia',
-      role: 'Co-Founder / CEO',
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-	{
-      name: 'Sumil makadia',
-      role: 'Co-Founder / CEO',
-      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-	
-    // More people...
-  ]);
-</script>
-
 <template>
-	<div class="bg-white py-24 sm:py-5 dark:bg-transparent">
-		<div class="mx-auto max-w-7xl px-6 lg:px-8">
-		<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">Recent Complaints</h2>
-		<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper suspendisse.</p>
-  
-			<ul role="list" class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-				<li v-for="person in people" :key="person.name">
-					<a :href="`/complaints/single-complaints/`" class="block">
-					<div class="flex items-center gap-x-6 bg-gray-100 rounded-lg p-4 text-left">
-						<img class="h-16 w-16 rounded-full" :src="person.imageUrl" alt="" />
-						<div>
-						<h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">{{ person.name }}</h3>
-						<p class="text-sm font-semibold leading-6 text-indigo-600">{{ person.role }}</p>
-						</div>
-					</div>
-					</a>
-				</li>
-			</ul>
+  <div class="relative xl:mx-auto">
+    <!-- Search box -->
+    <input type="text" v-model="searchQuery" placeholder="Search companies..." class="border border-gray-200 rounded-full px-4 w-4/12 py-4 mb-8 mt-3 ">
 
-		</div>
-	</div>
-  </template>
-  
-  
-  
- 
+    <!-- Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 lg:gap-8">
+      <div v-for="(company, index) in displayedCompanies" :key="index" class="border border-gray-300 shadow-xl rounded-lg overflow-hidden">
+        <div class="flex items-start">
+          <!-- Company logo/image -->
+          <img src="@/assets/images/digi-bg.jpg" alt="Company Logo" class="w-1/3 h-56 mr-6">
+
+          <!-- Card -->
+          <div class="p-4 relative z-10 w-70 text-left align-middle self-center items-center">
+            <h3 class="text-2xl mb-2 font-bold text-gray-800 dark:text-gray-200">{{ company.name }}</h3>
+            <div class="text-lg text-gray-500">{{ company.address }}</div>
+            <div class="text-lg text-gray-500">{{ company.contact }}</div>
+            <div class="text-lg text-gray-500">{{ company.website }}</div>
+
+            <!-- Active deals -->
+            <div v-if="company.activeDeals" class="text-base italic  text-gray-500">{{ company.activeDeals }}</div>
+
+            <!-- Start free trial button -->
+            <div class="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
+              <div class="hidden">
+                <p class="text-lg text-gray-500">Cancel anytime.</p>
+                <p class="text-lg text-gray-500">No card required.</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Card -->
+        </div>
+      </div>
+    </div>
+    <!-- End Grid -->
+
+    <!-- Pagination -->
+    <div class="flex justify-center mt-6">
+      <nav class="flex items-center">
+        <button @click="prevPage" :disabled="currentPage === 1" class="px-3 py-1 mr-2 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
+          Previous
+        </button>
+        <div class="flex">
+          <button v-for="pageNumber in totalPages" :key="pageNumber" @click="goToPage(pageNumber)" :class="{ 'bg-blue-500 text-white': pageNumber === currentPage }" class="px-3 py-1 mx-1 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
+            {{ pageNumber }}
+          </button>
+        </div>
+        <button @click="nextPage" :disabled="currentPage === totalPages" class="px-3 py-1 ml-2 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
+          Next
+        </button>
+      </nav>
+    </div>
+    <!-- End Pagination -->
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      searchQuery: '',
+      companies: [
+        {
+          logo: '@/assets/images/profile-banner-2.jpg',
+          name: 'Company Lorem Ipsum',
+          address: '123 Street, City, Country',
+          contact: '+1234567890',
+          website: 'www.company1.com',
+          activeDeals: 'Deals offer 3'
+        },
+        {
+          logo: '@assets/images/profile-banner-2.jpg',
+          name: 'Ipsum Company Nesas ',
+          address: '456 Avenue, City, Country',
+          contact: '+9876543210',
+          website: 'www.company2.com',
+          activeDeals: null
+        },
+        {
+          logo: '@assets/images/profile-banner-2.jpg',
+          name: 'Ipsum Company Nesas ',
+          address: '456 Avenue, City, Country',
+          contact: '+9876543210',
+          website: 'www.company2.com',
+          activeDeals: null
+        },
+        {
+          logo: '@assets/images/profile-banner-2.jpg',
+          name: 'Ipsum Company Nesas ',
+          address: '456 Avenue, City, Country',
+          contact: '+9876543210',
+          website: 'www.company2.com',
+          activeDeals: null
+        },
+        {
+          logo: '@assets/images/profile-banner-2.jpg',
+          name: 'Ipsum Company Nesas ',
+          address: '456 Avenue, City, Country',
+          contact: '+9876543210',
+          website: 'www.company2.com',
+          activeDeals: null
+        },
+        {
+          logo: '@assets/images/profile-banner-2.jpg',
+          name: 'Ipsum Company Nesas ',
+          address: '456 Avenue, City, Country',
+          contact: '+9876543210',
+          website: 'www.company2.com',
+          activeDeals: null
+        },
+        {
+          logo: '@assets/images/profile-banner-2.jpg',
+          name: 'Ipsum Company Nesas ',
+          address: '456 Avenue, City, Country',
+          contact: '+9876543210',
+          website: 'www.company2.com',
+          activeDeals: null
+        },
+        
+        // Add more company objects as needed
+      ],
+      itemsPerPage: 5,
+      currentPage: 1
+    };
+  },
+  computed: {
+    filteredCompanies() {
+      return this.companies.filter(company =>
+        company.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+    },
+    totalPages() {
+      return Math.ceil(this.filteredCompanies.length / this.itemsPerPage);
+    },
+    displayedCompanies() {
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+      const endIndex = startIndex + this.itemsPerPage;
+      return this.filteredCompanies.slice(startIndex, endIndex);
+    }
+  },
+  methods: {
+    nextPage() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+      }
+    },
+    prevPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
+    },
+    goToPage(pageNumber) {
+      this.currentPage = pageNumber;
+    }
+  }
+};
+</script>
