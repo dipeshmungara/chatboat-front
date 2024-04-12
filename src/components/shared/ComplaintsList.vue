@@ -6,7 +6,7 @@
     <!-- Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 lg:gap-8">
       <div v-for="(company, index) in displayedCompanies" :key="index" class="border border-gray-300 shadow-xl rounded-lg overflow-hidden">
-        <div class="flex items-start">
+        <div class="block sm:flex items-start">
           <!-- Company logo/image -->
           <img src="@/assets/images/digi-bg.jpg" alt="Company Logo" class="w-full sm:w-1/3 sm:h-56 h-auto mr-6">
 
@@ -41,11 +41,11 @@
           Previous
         </button>
         <div class="flex">
-          <button v-for="pageNumber in totalPages" :key="pageNumber" @click="goToPage(pageNumber)" :class="{ 'bg-blue-500 text-white': pageNumber === currentPage }" class="px-3 py-1 mx-1 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
+          <button v-for="pageNumber in totalPages" :key="pageNumber" @click="goToPage(pageNumber)" :class="{ 'bg-blue-500 text-white dark:text-white': pageNumber === currentPage }" class="px-3 py-1 mx-1 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-white">
             {{ pageNumber }}
           </button>
         </div>
-        <button @click="nextPage" :disabled="currentPage === totalPages" class="px-3 py-1 ml-2 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
+        <button @click="nextPage" :disabled="currentPage === totalPages" class="px-3 py-1 ml-2 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-white">
           Next
         </button>
       </nav>
