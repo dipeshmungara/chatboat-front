@@ -9,7 +9,7 @@ export default {
 		selectOptions: {
 			type: Array,
 			default: () => [
-				'Web Application',
+				'Lorem Ipsum',
 				'Mobile Application',
 				'UI/UX Design',
 				'Branding & Anim',

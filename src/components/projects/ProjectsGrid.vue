@@ -9,7 +9,7 @@ export default {
 	data: () => {
 		return {
 			projects,
-			projectsHeading: 'Projects Portfolio',
+			projectsHeading: 'Our Company List',
 			selectedCategory: '',
 			searchProject: '',
 		};
@@ -72,7 +72,7 @@ export default {
 					mb-4
 				"
 			>
-				Search projects by title or filter by category
+				Risus proin diam nunc commodo
 			</h3>
 			<div
 				class="
@@ -127,13 +127,13 @@ export default {
 						aria-label="Name"
 					/>
 				</div>
-				<ProjectsFilter @filter="selectedCategory = $event" />
+				<ProjectsFilter class="hidden" @filter="selectedCategory = $event" />
 			</div>
 		</div>
 
 		<!-- Projects grid -->
 		<div
-			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10"
+			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10 "
 		>
 			<ProjectSingle
 				v-for="project in filteredProjects"

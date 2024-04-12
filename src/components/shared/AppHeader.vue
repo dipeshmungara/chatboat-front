@@ -3,14 +3,12 @@ import ThemeSwitcher from '../ThemeSwitcher';
 import HireMeModal from '../HireMeModal.vue';
 import feather from 'feather-icons';
 import AppHeaderLinks from './AppHeaderLinks.vue';
-import Button from '../reusable/Button.vue';
 
 export default {
 	components: {
 		ThemeSwitcher,
 		HireMeModal,
 		AppHeaderLinks,
-		Button,
 	},
 	data() {
 		return {
@@ -141,22 +139,17 @@ export default {
 
 			<!-- Header right section buttons -->
 			<div
-				class="hidden sm:flex justify-between items-center flex-col md:flex-row"
+				class="hidden  sm:flex justify-between items-center flex-col md:flex-row"
 			>
 				<!-- Hire me button -->
 				<div class="hidden md:block">
 					<router-link
 			to="/login"
-			class="font-general-medium block text-left text-base font-medium text-primary-dark dark:text-ternary-light hover:text-indigo-600 dark:hover:text-indigo-300  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
-			aria-label="Login"
+			class="font-general-medium block text-left text-base font-medium text-primary-dark dark:text-ternary-light hover:text-indigo-600 dark:hover:text-indigo-300  sm:mx-4  sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+			aria-label="Contact"
 			>Login</router-link
 		>
-					<Button
-						title="Login"
-						class="hidden text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
-						@click="showModal()"
-						aria-label="Hire Me Button"
-					/>
+				
 				</div>
 
 				<!-- Theme switcher large screen -->

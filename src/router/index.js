@@ -61,6 +61,24 @@ const routes = [
 		},
 	},
 	{
+		path: '/complaints',
+		name: 'Complaints',
+		component: () =>
+			import(/* webpackChunkName: "projects" */ '../views/Complaints.vue'),
+		meta: {
+			title: 'DigiTalk - Complaints',
+		},
+	},
+	{
+		path: '/profile',
+		name: 'Profile',
+		component: () =>
+			import(/* webpackChunkName: "projects" */ '../views/Profile.vue'),
+		meta: {
+			title: 'DigiTalk - Contact',
+		},
+	},
+	{
 		path: '/login',
 		name: 'Login',
 		component: () =>
@@ -76,6 +94,24 @@ const routes = [
 			import(/* webpackChunkName: "projects" */ '../views/Signup.vue'),
 		meta: {
 			title: 'DigiTalk - Signup',
+		},
+	},
+	{
+		path: '/deals',
+		name: 'Deals',
+		component: () =>
+			import(/* webpackChunkName: "projects" */ '../views/Deals.vue'),
+		meta: {
+			title: 'DigiTalk - Deals',
+		},
+	},
+	{
+		path: '/complaints/single-complaints',
+		name: 'SingleComplaints',
+		component: () =>
+			import(/* webpackChunkName: "projects" */ '../views/SingleComplaints.vue'),
+		meta: {
+			title: 'DigiTalk - Single Complaints',
 		},
 	},
 ];

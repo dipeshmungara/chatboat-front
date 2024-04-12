@@ -26,12 +26,12 @@ export default { components: { Button, FormInput } };
 					inputIdentifier="password"
 					inputType="password"
 				/>
-				<div>
+				<div class="text-center">
 					<Button
-						title="Send Message"
-						class="px-4 py-2.5 text-white tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-500"
+						title="Submit"
+						class="px-4 py-2.5 text-white tracking-wider w-60 bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-500"
 						type="submit"
-						aria-label="Send Message"
+						aria-label="Submit"
 					/>
 				</div>
 			</form>

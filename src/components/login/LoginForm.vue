@@ -25,16 +25,16 @@ export default { components: { Button, FormInput } };
 					inputIdentifier="password"
 					inputType="password"
 				/>
-				<div>
+				<div class="text-center">
 					<Button
-						title="Send Message"
-						class="px-4 py-2.5 text-white tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-500"
+						title="Submit"
+						class="px-4 py-2.5 text-center w-60 text-white tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-500"
 						type="submit"
-						aria-label="Send Message"
+						aria-label="Submit"
 					/>
 				</div>
 			</form>
-			<div class="border-t-2 mt-7 pt-4 text-center border-primary-light dark:border-secondary-dark">
+			<div class="border-t-2 mt-7 pt-4 text-center border-primary-light dark:border-secondary-dark dark:text-white">
 			Not a Member? <router-link
 			to="/signup"
 			class="font-general-medium  text-left text-base font-medium text-primary-dark dark:text-ternary-light hover:text-indigo-600 dark:hover:text-indigo-300  mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
