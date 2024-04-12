@@ -1,7 +1,7 @@
 <template>
   <div class="relative xl:mx-auto">
     <!-- Search box -->
-    <input type="text" v-model="searchQuery" placeholder="Search companies..." class="border border-gray-200 rounded-full px-4 w-4/12 py-4 mb-8 mt-3 ">
+    <input type="text" v-model="searchQuery" placeholder="Search companies..." class="border border-gray-200 rounded-full px-4 w-full sm:w-4/12 py-4 mb-8 mt-3 ">
 
     <!-- Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 lg:gap-8">
