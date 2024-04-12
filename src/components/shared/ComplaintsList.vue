@@ -8,7 +8,7 @@
       <div v-for="(company, index) in displayedCompanies" :key="index" class="border border-gray-300 shadow-xl rounded-lg overflow-hidden">
         <div class="flex items-start">
           <!-- Company logo/image -->
-          <img src="@/assets/images/digi-bg.jpg" alt="Company Logo" class="w-1/3 h-56 mr-6">
+          <img src="@/assets/images/digi-bg.jpg" alt="Company Logo" class="w-1/3 sm:h-56 h-auto mr-6">
 
           <!-- Card -->
           <div class="p-4 relative z-10 w-70 text-left align-middle self-center items-center">
@@ -116,7 +116,7 @@ export default {
           website: 'www.company2.com',
           activeDeals: null
         },
-        
+
         // Add more company objects as needed
       ],
       itemsPerPage: 5,
