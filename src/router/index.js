@@ -73,6 +73,18 @@ const routes = [
 		},
 	},
 	{
+		path: '/compaines/single-company',
+		name: 'Single Company',
+		// route level code-splitting
+		// this generates a separate chunk (projects.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () =>
+			import(/* webpackChunkName: "projects" */ '../views/SingleCompany.vue'),
+		meta: {
+			title: 'DigiTalk - Single Company',
+		},
+	},
+	{
 		path: '/complaints',
 		name: 'Complaints',
 		component: () =>

@@ -12,7 +12,9 @@
 
           <!-- Card -->
           <div class="p-4 relative z-10 w-70 text-left align-middle self-center items-center">
-            <h3 class="text-2xl mb-2 font-bold text-gray-800 dark:text-gray-200">{{ company.name }}</h3>
+            <div>
+              <a :href="company.url" class="text-2xl mb-2 font-bold text-gray-800 dark:text-gray-200 hover:text-blue-500">{{ company.name }}</a>
+            </div>
             <div class="text-lg text-gray-500">{{ company.address }}</div>
             <div class="text-lg text-gray-500">{{ company.contact }}</div>
             <div class="text-lg text-gray-500">{{ company.website }}</div>
@@ -37,11 +39,11 @@
     <!-- Pagination -->
     <div class="flex justify-center mt-6">
       <nav class="flex items-center">
-        <button @click="prevPage" :disabled="currentPage === 1" class="px-3 py-1 mr-2 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:bg-gray-100">
+        <button @click="prevPage" :disabled="currentPage === 1" class="px-3 py-1 mr-2 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-black  active:text-black">
           Previous
         </button>
         <div class="flex">
-          <button v-for="pageNumber in totalPages" :key="pageNumber" @click="goToPage(pageNumber)" :class="{ 'bg-blue-500 text-white dark:text-white': pageNumber === currentPage }" class="px-3 py-1 mx-1 rounded-md border border-gray-300 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-white">
+          <button v-for="pageNumber in totalPages" :key="pageNumber" @click="goToPage(pageNumber)" :class="{ 'bg-blue-500 text-white  focus:text-black  active:text-black dark:text-white focus:bg-blue-500': pageNumber === currentPage }" class="px-3 py-1 mx-1 rounded-md border border-gray-300 hover:bg-gray-100 hover:text-black focus:outline-none focus:bg-gray-100 dark:text-white">
             {{ pageNumber }}
           </button>
         </div>
@@ -66,6 +68,7 @@ export default {
           address: '123 Street, City, Country',
           contact: '+1234567890',
           website: 'www.company1.com',
+          url: "http://localhost:8080/compaines/single-company/",
           activeDeals: 'Deals offer 3'
         },
         {
@@ -74,6 +77,7 @@ export default {
           address: '456 Avenue, City, Country',
           contact: '+9876543210',
           website: 'www.company2.com',
+          url: "http://localhost:8080/compaines/single-company/",
           activeDeals: null
         },
         {
@@ -82,6 +86,7 @@ export default {
           address: '456 Avenue, City, Country',
           contact: '+9876543210',
           website: 'www.company2.com',
+          url: "http://localhost:8080/compaines/single-company/",
           activeDeals: null
         },
         {
@@ -90,6 +95,7 @@ export default {
           address: '456 Avenue, City, Country',
           contact: '+9876543210',
           website: 'www.company2.com',
+          url: "http://localhost:8080/compaines/single-company/",
           activeDeals: null
         },
         {
@@ -98,6 +104,7 @@ export default {
           address: '456 Avenue, City, Country',
           contact: '+9876543210',
           website: 'www.company2.com',
+          url: "http://localhost:8080/compaines/single-company/",
           activeDeals: null
         },
         {
@@ -106,6 +113,7 @@ export default {
           address: '456 Avenue, City, Country',
           contact: '+9876543210',
           website: 'www.company2.com',
+          url: "http://localhost:8080/compaines/single-company/",
           activeDeals: null
         },
         {
@@ -114,6 +122,7 @@ export default {
           address: '456 Avenue, City, Country',
           contact: '+9876543210',
           website: 'www.company2.com',
+          url: "http://localhost:8080/compaines/single-company/",
           activeDeals: null
         },
 
