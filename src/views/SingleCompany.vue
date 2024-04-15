@@ -2,7 +2,7 @@
 	<div class="container mx-auto mt-10 sm:mt-20">
 		<!-- Company header -->
 		<div class="text-center">
-			<h1 class="text-3xl font-bold">{{ singleCompany.name }}</h1>
+			<h1 class="text-3xl font-bold dark:text-white">{{ singleCompany.name }}</h1>
 		</div>
 
 		<!-- Company details -->
@@ -15,26 +15,26 @@
 
 			<!-- Company information -->
 			<div>
-				<h2 class="text-xl font-semibold">Contact Information</h2>
-				<p class="">{{ singleCompany.address }}</p>
-				<p><strong>Contact:</strong> {{ singleCompany.contact }}</p>
-				<p><strong>Website:</strong> <a :href="singleCompany.website" class="text-blue-500">{{
+				<h2 class="text-xl font-semibold dark:text-white">Contact Information:</h2>
+				<p class="text-lg mb-4 text-ternary-dark dark:text-ternary-light">{{ singleCompany.address }}</p>
+				<p class="text-lg mb-2 text-ternary-dark dark:text-ternary-light"><strong>Contact:</strong> {{ singleCompany.contact }}</p>
+				<p  class="text-lg mb-2 text-ternary-dark dark:text-ternary-light"><strong>Website:</strong> <a :href="singleCompany.website" class="text-blue-500">{{
 					singleCompany.website }}</a></p>
-				<p v-if="singleCompany.activeDeals"><strong>Active Deals:</strong> {{ singleCompany.activeDeals }}</p>
+				<p  class="text-lg mb-2 text-ternary-dark dark:text-ternary-light" v-if="singleCompany.activeDeals"><strong>Active Deals:</strong> {{ singleCompany.activeDeals }}</p>
 
 				<!-- Start free trial button -->
-				<div class="mt-5">
-					<button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Start Free
+				<div class="mt-5 hidden">
+					<button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 dark:text-white">Start Free
 						Trial</button>
 				</div>
 
 				<!-- Social sharing -->
-				<div class="mt-10 border-t-2 border-b-2 pb-5 border-primary-light dark:border-secondary-dark pt-3">
-					<h2 class="text-xl font-semibold">Share Individual Deal</h2>
+				<div class="mt-10 border-t-2 pb-5 border-primary-light dark:border-secondary-dark pt-3">
+					<h2 class="text-xl font-semibold dark:text-white">Share Individual Deal</h2>
 					<div class="flex space-x-4 mt-2 text-center mx-auto align-middle justify-center">
 						<!-- Facebook -->
 						<a :href="getFacebookShareLink()"
-							class="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm px-4 py-2 duration-500">
+							class="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm px-4 py-2 duration-500 ">
 
 							<svg width="24px" height="24px" viewBox="-5 0 20 20" version="1.1"
 								xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
