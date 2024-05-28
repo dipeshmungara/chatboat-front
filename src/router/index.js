@@ -103,6 +103,15 @@ const routes = [
 		},
 	},
 	{
+		path: '/agent-profile',
+		name: 'Agent Profile',
+		component: () =>
+			import(/* webpackChunkName: "projects" */ '../views/AgentProfile.vue'),
+		meta: {
+			title: 'DigiTalk - Agent Profile',
+		},
+	},
+	{
 		path: '/login',
 		name: 'Login',
 		component: () =>
