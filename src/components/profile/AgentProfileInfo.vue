@@ -32,7 +32,7 @@
         <hr>
         <!-- User List -->
         <ul class="mt-2">
-          <li v-for="user in filteredUsers" :key="user.id" class="mb-4">
+          <li v-for="user in filteredUsers" :key="user.id" class="mb-4 last:mb-0">
             <div @click="selectUser(user)" class="flex items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2">
               <img :src="user.profilePicture" class="h-10 w-10 rounded-full object-cover mr-4" alt="Profile Picture">
               <div class="text-left">
@@ -61,7 +61,7 @@
         <!-- Chat Section -->
         <div class="px-6 py-4">
           <h2 class="text-xl font-semibold text-gray-800 mb-4 hidden">Chat</h2>
-          <div class="bg-gray-100 rounded-lg p-4 mb-2 h-64 overflow-y-auto">
+          <div class="bg-gray-100 rounded-lg p-4 mb-2 h-72 overflow-y-auto">
             <div v-for="chat in selectedUser.chats" :key="chat.id" :class="{'text-right': chat.sender === 'User'}" class="mb-2 text-left">
               <span :class="{'bg-blue-100 text-blue-800': chat.sender === selectedUser.name, 'bg-white text-gray-800': chat.sender === 'User'}" class="inline-block rounded-lg px-3 py-1">{{ chat.message }}</span>
             </div>
