@@ -13,24 +13,25 @@
         </div>
         <!-- Action Buttons with Icons -->
         <div class="flex justify-between mb-4">
-          <button @click="setActiveChat" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <button @click="setActiveChat" class="bg-green-600 hover:bg-green-700 text-sm text-white font-semibold py-1 px-4 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2m-4 0H7a2 2 0 01-2-2V10a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2z" />
-            </svg>
+            </svg> Active
           </button>
-          <button @click="setInactiveChat" class="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <button @click="setInactiveChat" class="bg-yellow-600 hover:bg-yellow-700 text-sm text-white font-semibold py-1 px-4 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.28-4.28c.63-.63.18-1.72-.71-1.72H5a2 2 0 00-2 2v10c0 .55.22 1.05.59 1.41L10 17.41V19a2 2 0 002 2h3a1 1 0 001-1v-1l2.38-2.38c.35-.35.62-.84.62-1.39V9a1 1 0 00-1-1H16l-1-1z" />
-            </svg>
+            </svg> Inactive
           </button>
-          <button @click="closeChat" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <button @click="closeChat" class="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold py-1 px-4 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            </svg> Close
           </button>
         </div>
+        <hr>
         <!-- User List -->
-        <ul>
+        <ul class="mt-2">
           <li v-for="user in filteredUsers" :key="user.id" class="mb-4">
             <div @click="selectUser(user)" class="flex items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2">
               <img :src="user.profilePicture" class="h-10 w-10 rounded-full object-cover mr-4" alt="Profile Picture">
