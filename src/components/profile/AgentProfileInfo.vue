@@ -5,7 +5,7 @@
   <div class="flex flex-col lg:flex-row">
 
     <!-- Left Sidebar - User List and Search -->
-    <div class="p-4 lg:w-1/4">
+    <div class="p-4 lg:w-2/6">
       <div class="bg-white shadow-lg rounded-lg px-6 py-4">
         <!-- Search Bar -->
         <div class="mb-4">
@@ -41,7 +41,6 @@
             </div>
           </li>
         </ul>
-        <button class="bg-red-600 hover:bg-red-700 text-white font-semibold mt-5 py-2 px-4 rounded w-full">Logout</button>
       </div>
     </div>
 
@@ -49,18 +48,18 @@
     <div class="p-4 lg:w-3/4">
       <div v-if="selectedUser" class="bg-white shadow-lg rounded-lg overflow-hidden">
         <!-- Profile Header -->
-        <div class="px-6 py-4">
-          <h1 class="text-3xl font-semibold text-gray-800">{{ selectedUser.name }}</h1>
-          <p class="text-gray-600">{{ selectedUser.bio }}</p>
-          <div class="mt-4">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#{{ selectedUser.location }}</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#{{ selectedUser.profession }}</span>
-          </div>
-        </div>
+        <div class="flex items-start px-6">
+    <img src="https://via.placeholder.com/150" alt="Profile Image" class="w-16 h-16 rounded-full mr-4">
+    <div class="text-left">
+      <h1 class="text-3xl font-semibold text-gray-800">{{ selectedUser.name }}</h1>
+      <p class="text-gray-600">{{ selectedUser.bio }}</p>
+      
+    </div>
+  </div>
 
         <!-- Chat Section -->
         <div class="px-6 py-4">
-          <h2 class="text-xl font-semibold text-gray-800 mb-4">Chat</h2>
+          <h2 class="text-xl font-semibold text-gray-800 mb-4 hidden">Chat</h2>
           <div class="bg-gray-100 rounded-lg p-4 mb-2 h-64 overflow-y-auto">
             <div v-for="chat in selectedUser.chats" :key="chat.id" :class="{'text-right': chat.sender === 'User'}" class="mb-2 text-left">
               <span :class="{'bg-blue-100 text-blue-800': chat.sender === selectedUser.name, 'bg-gray-100 text-gray-800': chat.sender === 'User'}" class="inline-block rounded-lg px-3 py-1">{{ chat.message }}</span>
